@@ -8,15 +8,6 @@ A Flutter plugin for document scanning on Android, iOS, and Web using ML Kit Doc
 
 Check out the `example` directory for a sample Flutter app using `flutter_doc_scanner`.
 
-## Document Scanner Demo
-<p align="center">
-	<img src="https://github.com/adarsh200201/scanner/blob/main/demo/doc_scan_demo.gif?raw=true" width="200"  />
-</p>
-
-## Screenshots
-| ![Screenshot 1](https://raw.githubusercontent.com/adarsh200201/scanner/main/demo/screen_shot_1.jpg?raw=true) | ![Screenshot 2](https://raw.githubusercontent.com/adarsh200201/scanner/main/demo/screen_shot_2.jpg?raw=true) | ![Screenshot 3](https://raw.githubusercontent.com/adarsh200201/scanner/main/demo/screen_shot_3.jpg?raw=true) |
-|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| ![Screenshot 4](https://raw.githubusercontent.com/adarsh200201/scanner/main/demo/screen_shot_4.jpg?raw=true) | ![Screenshot 5](https://raw.githubusercontent.com/adarsh200201/scanner/main/demo/screen_shot_5.jpg?raw=true) | ![Screenshot 6](https://raw.githubusercontent.com/adarsh200201/scanner/main/demo/screen_shot_6.jpg?raw=true) |
 
 
 ## Features
