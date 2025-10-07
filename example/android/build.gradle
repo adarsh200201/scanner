@@ -1,0 +1,40 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+// Workaround for third-party plugins that have not set Android namespace (AGP 8+ requirement)
+subprojects { prj ->
+    if (prj.plugins.hasPlugin('com.android.library')) {
+        try {
+            def androidExt = prj.extensions.getByName('android')
+            if (androidExt != null) {
+                def hasNs = false
+                try { hasNs = androidExt.hasProperty('namespace') && androidExt.namespace != null } catch (ignored) { hasNs = false }
+                if (!hasNs) {
+                    if (prj.name == 'image_gallery_saver') {
+                        androidExt.namespace = 'dev.fix.image_gallery_saver'
+                    } else if (prj.name == 'gallery_saver') {
+                        androidExt.namespace = 'dev.fix.gallery_saver'
+                    } else {
+                        androidExt.namespace = "dev.fix.${prj.name.replaceAll('-', '_')}"
+                    }
+                }
+            }
+        } catch (ignored) { }
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
